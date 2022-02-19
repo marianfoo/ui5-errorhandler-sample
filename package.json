@@ -16,10 +16,10 @@
     },
     "dependencies": {
         "cors-anywhere": "^0.4.4",
-        "express": "^4.16.4"
+        "express": "^4.16.4",
+        "@marianfoo/ui5-errorhandler": "^0.0.4"
     },
     "devDependencies": {
-        "@marianfoo/ui5-errorhandler": "^0.0.4",
         "@prettier/plugin-xml": "^1.1.0",
         "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
         "@sapui5/ts-types": "^1.96.0",
