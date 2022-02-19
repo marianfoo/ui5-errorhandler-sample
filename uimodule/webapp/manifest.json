@@ -8,7 +8,16 @@
       "version": "0.0.1"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources" : {
+      "northwind" : {
+        "uri": "http://localhost:8888/https://services.odata.org/V2/Northwind/Northwind.svc/",
+		    "type": "OData",
+		    "settings": {
+		      "odataVersion": "2.0"
+		    }
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -44,7 +53,10 @@
         "settings": {
           "bundleName": "de.marianzeis.npmpackagesample.i18n.i18n"
         }
-      }
+      },
+      "": {
+        "dataSource": "northwind"
+        }
     },
     "resources": {
       "css": [

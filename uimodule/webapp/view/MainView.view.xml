@@ -3,7 +3,10 @@
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
-                    <content />
+                    <content>
+                        <Button text="Test button" press=".dataRequest($event, 1)"/>
+                        <Button text="Test button with error" press=".dataRequest($event, 14444444444444)"/>
+                    </content>
                 </Page>
             </pages>
         </App>
