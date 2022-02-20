@@ -42,7 +42,7 @@ In the [`package.json`](https://github.com/marianfoo/ui5-errorhandler-sample/blo
     }
 ```
 
-Consume it in the UI5 app ([Component.js](https://github.com/marianfoo/ui5-errorhandler-sample/blob/main/uimoduleui5/webapp/Component.js)):
+Consume it in the UI5 app with the resource path as defined in the npm package ([Component.js](https://github.com/marianfoo/ui5-errorhandler-sample/blob/main/uimoduleui5/webapp/Component.js)):
 
 ```js
 sap.ui.define(
@@ -76,9 +76,8 @@ sap.ui.define(
 
 ## javaScript Class style module (any other npm package)
 
-### Consume in UI5 Sample App
 
-In the ui5.yaml file, we have the following entries:
+In the [ui5.yaml](uimodulenonui5/ui5.yaml) file, we have the following entries:
 
 ```yaml
 server:
@@ -92,7 +91,7 @@ builder:
     afterTask: replaceVersion
 ```
 
-In package.json:
+In [package.json](package.json):
 
 ```json
     "devDependencies": {
@@ -106,7 +105,7 @@ In package.json:
     }
 ```
 
-We consume it in Component.js with the npm package name:
+We consume it in [Component.js](uimodulenonui5/webapp/Component.js) with the npm package name:
 
 ```js
 sap.ui.define(
@@ -134,6 +133,53 @@ sap.ui.define(
         });
     }
 );
+```
+
+Now the javaScript class is wrapped:
+### Before
+```js
+var BaseObject = require('sap/ui/base/Object');
+var MessageBox = require('sap/m/MessageBox');
+
+module.exports = class ErrorHandler extends BaseObject {
+// ************************************************************************************************************
+		// Constructor
+		// ************************************************************************************************************
+
+		/**
+		 * Constructor Method of the error handler. Initialises the error handler for the default model of the component.
+		 * @public
+		 * @constructor
+		 * @param {sap.ui.core.UIComponent} oComponent Reference to the component of the app
+		 * @method module:controller/ErrorHandler#constructor
+		 */
+		 constructor(oComponent) {
+```
+### After (how the ui5 app is consuming it)
+```js
+sap.ui.define(['sap/ui/base/Object', 'sap/m/MessageBox'], (function (require$$0, require$$1) { 'use strict';
+
+	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+	var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
+	var require$$1__default = /*#__PURE__*/_interopDefaultLegacy(require$$1);
+
+	var BaseObject = require$$0__default["default"];
+	var MessageBox = require$$1__default["default"];
+
+	var ErrorHandlerClass = class ErrorHandler extends BaseObject {
+	// ************************************************************************************************************
+			// Constructor
+			// ************************************************************************************************************
+
+			/**
+			 * Constructor Method of the error handler. Initialises the error handler for the default model of the component.
+			 * @public
+			 * @constructor
+			 * @param {sap.ui.core.UIComponent} oComponent Reference to the component of the app
+			 * @method module:controller/ErrorHandler#constructor
+			 */
+			 constructor(oComponent) {
 ```
 ## Credits
 
