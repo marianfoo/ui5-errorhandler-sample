@@ -5,7 +5,7 @@ type: application
 resources:
     configuration:
         paths:
-            webapp: uimodule/webapp
+            webapp: uimoduleui5/webapp
 framework:
     name: OpenUI5
     version: 1.96.0

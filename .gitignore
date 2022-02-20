@@ -9,3 +9,5 @@ deployer/resources/
 Makefile*
 mta-*
 approuter/*/webapp/
+uimodule-ui5/dist
+uimodule-non-ui5/dist
