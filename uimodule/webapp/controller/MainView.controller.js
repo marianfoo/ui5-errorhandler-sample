@@ -7,11 +7,10 @@ sap.ui.define(
         "use strict";
 
         return Controller.extend("de.marianzeis.npmpackagesample.controller.MainView", {
-            onInit: function () {
+            onInit: function () {},
+            dataRequest: function (event, number) {
+                this.getOwnerComponent().getModel().read(`/Products(${number})`);
             },
-            dataRequest: function(event, number){
-                this.getOwnerComponent().getModel().read(`/Products(${number})`)
-              }
         });
     }
 );

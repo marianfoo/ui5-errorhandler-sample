@@ -1,5 +1,5 @@
 sap.ui.define(
-    ["sap/ui/core/UIComponent", "sap/ui/Device", "de/marianzeis/npmpackagesample/model/models",  "@marianfoo/ui5-errorhandler/ErrorHandler"],
+    ["sap/ui/core/UIComponent", "sap/ui/Device", "de/marianzeis/npmpackagesample/model/models", "de/marianzeis/ui5-errorhandler/ErrorHandler"],
     /**
      * @param {typeof sap.ui.core.UIComponent} UIComponent
      * @param {typeof sap.ui.Device} Device
